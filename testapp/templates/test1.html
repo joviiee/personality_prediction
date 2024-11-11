@@ -1,0 +1,18 @@
+{% extends 'personality_test_master.html' %}
+
+{% block style%}
+    .text{
+        position:relative;
+        top:200px;
+        padding-left:50px;
+        font-size:200%;
+    }
+{% endblock style%}
+
+{% block bodypm %}
+<div class = "text">
+<hr>
+<br>
+<p class="w3-center">You personality type is {{prediction}}</p>
+</div>
+{% endblock bodypm %}

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>{% block titlepm %}
+{% endblock titlepm %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- adding fafa-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- adding googleapis-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><!--adding bootstrap icons-->
+<style>
+
+</style>
+</head>
+<body >
+<div class="w3-bar w3-block" style="height:20%;background-color:#00cc99;position:fixed;width:100%;top:0;">
+	<div class="w3-left w3-jumbo w3-cell-row" style="padding-top:35px;padding-left:40px;width:15%;">
+		<div class="w3-cell"><i class="fa fa-home" ></i></div>
+		<div class="w3-cell" style="font-size:30%;"><b>{% block iconpm %}
+		{% endblock iconpm %}</b></div>
+	</div>
+</div>
+<div class="">
+	<div class="w3-container w3-sidebar" style="height:100%;width:250px;margin-top:25%;">
+		<div class="w3-container" style="margin-top:30px;">
+			<ul class="w3-ul">
+				<li><a href="#target1">{% block link1pm %}{% endblock link1pm %}</a></li>
+				
+				<li><a href="#target2">{% block link2pm %}{% endblock link2pm %}</a></li>
+
+				<li><a href="#target3">{% block link3pm %}{% endblock link3pm %}</a></li>
+
+				<li><a href="#target4">{% block link4pm %}{% endblock link4pm %}</a></li>
+
+				<li><a href="#target5">{% block link5pm %}{% endblock link5pm %}</a></li>
+
+				<li><a href="#target6">{% block link6pm %}{% endblock link6pm %}</a></li>
+				
+	
+			</ul>
+		</div>
+	</div>
+	<div class="w3-container" style="height:100%;background-color:#99ffe6;overflow:hide;margin-left:250px;margin-top:9%;">
+		<div style="margin-left:75px;margin-top:55px;" >
+			{% block bodypm %}
+			<!--
+			<div class="w3-container">
+				<div style="margin-top-25px;">
+				<h1 id="target1" class="w3-cursive" style="font-size:300%;">{% block header1pm %}
+				{% endblock header1pm %}</h1>
+					<div class=" w3-xlarge" style="margin-top:45px;"
+						<p >{% block content1pm %}
+						{% endblock content1pm %}
+						</p>
+					</div>
+				</div>
+				<div style="margin-top:250px;">
+				<h1 id="target2" class="w3-cursive" style="font-size:300%;margin-top:25px;">{% block header2pm %}
+				{% endblock header2pm %}</h1>
+					<div class=" w3-xlarge" style="margin-top:45px;"
+						<p>{% block content2pm %}
+						{% endblock content2pm %}
+						</p>
+					</div>
+				</div>
+			</div>		
+			-->
+			{% endblock bodypm %}
+		</div>
+		<div class="w3-center w3-large" style="">
+			<button class="w3-button w3-round-xxlarge" style="background-color:#00cc99;width:20%;height:50px;margin-top:65px;">
+				<p style="margin-bottom:26px;">jump to the next page</p>
+			</button>
+			<br>
+			<button class="w3-button w3-round-xxlarge" style="background-color:#00cc99;width:20%;height:50px;margin-bottom:50px;margin-top:35px;">
+				<p style="margin-bottom:26px;">take the test</p>
+			</button>
+		</div>
+	</div>
+</div>
+</body>
+</html>

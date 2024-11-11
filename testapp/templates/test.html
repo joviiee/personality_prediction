@@ -1,0 +1,67 @@
+{% extends "master.html"%}
+
+{% block title%}
+    List of Tests
+{% endblock title %}
+
+{% block script %}
+    const deep = [];
+
+    deep[0]="nunu";
+    deep[2]="susu";
+
+    document.getElementById("a3").style.fontSize = "55px";
+
+    function show(){
+        document.getElementById("kuna").innerHTML = deep;
+    }
+
+    function hide(){
+        document.getElementById("a2").style.display = "none";
+    }
+
+    function disable(){
+        document.getElementById("a3").disabled ="true";
+    }
+
+    function string(){
+        deep[1]=6;
+    }
+
+    // function disable_button(m){
+        //let arg = "block"+m;
+        //const x = document.getElementsByClassName(arg);
+       // x[0].disabled="true";
+       // x[1].disabled="true";
+       // x[2].disabled="true";
+       // x[4].disabled="true";
+        //x[5].disabled="true";
+        //x[6].disabled="true";
+        //x[3].disabled="true";
+    }
+{% endblock script %}
+
+
+{% block body2 %}
+    <p id="a1" style="display:none"> sunnamandi </p>
+    <p id="a2" > silusilumandi </p>
+    <button class="w3-button" onclick="show() ;disable()">clickme</button>
+    <hr>
+    <button id="a3" class="w3-button"> affaf</button>
+    <hr>
+    <p class="tutu85"></p>
+    <button class="w3-button" onclick="string() ;disable() ">click</button>
+    <p id="kuna">jjj</p>
+{% endblock body2 %}
+
+{% block body1 %}
+    <ul class="w3-list">
+        {% for x in tests %}
+            <li>{{x.a}}</li>
+            <hr>
+        {% endfor %}
+        <a href="/."><li>HOME</li></li></a>
+        <input type="radio" value="9" name="koothi">
+        <input type="radio" value="0" name="koothi">
+    </ul>
+{% endblock body1 %} 

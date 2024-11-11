@@ -1,0 +1,187 @@
+{% extends 'personality_test_master.html' %}
+
+{% block titlepm %}
+Personality Test
+{% endblock titlepm %}
+
+{% block style %}
+    .container{
+        position:relative;
+        left:0px;
+        background-color:rgba(0,0,0,0.15);
+        width:100%;
+        padding-top:23vh;
+        
+    }
+
+    .question_text{
+        font-size:120%;
+    }
+
+    .container_buttons{
+        position:relative;
+        height:17vh;
+        width:44vw; 
+        z-index:1;
+        left:28vw;
+        border:solid 2px black; 
+        display:grid; 
+        grid-template-rows:auto,auto,auto,auto,auto,auto,auto;    
+    }
+
+    @media screen and (max-width:650px){
+    .container_buttons{
+        width:80vw;
+        left:10vw;
+    }
+        
+    }
+
+   div input{
+      position:absolute;
+      cursor: pointer;
+      background-color:white;
+      opacity:0;
+      z-index = -1;
+  }
+
+  div input:checked ~ span {
+      background-color:green;
+  }
+
+  .fake_button_div{
+      position:absolute;
+      z-index:2;
+      height:100%;
+      width:8vw;
+      border:2px solid black;
+      float:left;
+  }
+
+  div span{
+      position:absolute;
+      border: 2px solid black;
+      border-radius:50%;
+      cursor:pointer;
+      background-color:white;
+  }
+
+  .label {
+      position:absolute;
+      top:25%;
+      color:black;
+      left:10%;
+  }
+
+  label{
+      width:100%;
+      height:100%;
+      display:block;
+  }
+
+    .button:hover {
+      background-color:rgba(0,0,0,1);
+      color:white;
+  }
+
+  .btn0 {
+       width:30px;
+       height:30px;
+       left:12%;  
+       top:31%;
+  } 
+
+  .btnxxl {
+      width:75px;
+      height:75px;
+      left:6%; 
+      top:3%;
+  }
+
+  .btnxl {
+      width:60px;
+      height:60px;
+      left:3%;
+      top:12%;
+  }
+
+  .btnl {
+      width:45px;
+      height:45px;
+      left:10%;
+      top:21%;
+  }
+
+  .submit-button{
+      position:relative;
+      left:45%;
+      border:2px solid black;
+      background-color:rgba(8,103,73,1);
+      width:175px;
+      height:50px;
+      margin-bottom:45px;
+      margin-top:45px;
+      opacity:99%;
+  } 
+
+  .submit-button:hover{
+      background-color:rgba(0,0,0,.3);
+  }
+
+  .submit-button:active{
+      background-color:rgba(0,0,0,.3);
+  }
+
+{% endblock style %}
+
+{% block script %}
+    const in_data = [];
+
+   function show_in_data(){
+       document.getElementById("in_data").innerHTML = in_data;
+   }
+    
+{% endblock script %}
+
+{% block bodypm %}
+    <form class="container" action={% url 'form handler' %} method="POST">
+        {% csrf_token %}
+        {% for x in qens %}
+            <div class="w3-center">
+                <p class="question_text" ><b> {{x.question}}</b></p>
+            </div>
+            <div class="w3-bar w3-center w3-container container_buttons ">
+                <div class="fake_button_div">
+                    <input class="button button1 w3-ripple w3-circle btn1 btnxxl block{{x.id}}" checked="checked" type="radio" name="in_data[{{x.index}}]" value = "-3">
+                    <span class="btnxxl" ><div class="label"><p>Strongly</p><p>Disagree</p></div></span>
+                </div>
+                <div class="fake_button_div">
+                    <input class="button button2 w3-ripple w3-circle btn1 btnxl block{{x.id}}"  type="radio" name="in_data[{{x.index}}]" value="-2">
+                    <span class="btnxl"></span>
+                </div>   
+                <div class="fake_button_div">    
+                    <input class="button button3 w3-ripple button-extra-margin w3-circle btn1 btnl block{{x.id}}" type="radio" name="in_data[{{x.index}}]" value="-1">
+                    <span class="btnl"></span>
+                </div>    
+                <div class="fake_button_div">   
+                    <input class="button button4 w3-ripple w3-circle btn0 block{{x.id}}" type="radio" name="in_data[{{x.index}}]" value="0">
+                    <span class="btn0"></span>
+                </div>    
+                <div class="fake_button_div">
+                    <input class="button button5 w3-ripple w3-circle btn2 btnl block{{x.id}}" type="radio" name="in_data[{{x.index}}]" value="1">
+                    <span class="btnl"></span>
+                </div>    
+                <div class="fake_button_div">
+                    <input class="button button6 w3-ripple w3-circle btn2 btnxl block{{x.id}}" type="radio" name="in_data[{{x.index}}]" value="2">
+                    <span class="btnxl"></span>
+                </div>    
+                <div class="fake_button_div">
+                    <input class="button button7 w3-ripple w3-circle btn2 btnxxl block{{x.id}}" type="radio" name="in_data[{{x.index}}]" value="3">
+                    <span class="btnxxl"><div class="label"><p>Strongly</p><p>Agree</p></div></span>
+                </div>
+            </div>
+        {% endfor %}
+			<b style = "color:black;"><input class=" w3-ripple w3-round-xxlarge submit-button" name="submit" type="submit" value='See Results' >
+			</input></b>
+    </form>
+{% endblock bodypm %}

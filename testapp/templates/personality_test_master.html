@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+{% block titlepm %}
+{% endblock titlepm %}
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- adding fafa-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- adding googleapis-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><!--adding bootstrap icons-->
+<style>
+{% block style %}
+
+{% endblock style %}
+</style>
+<script>
+{% block script %}
+
+{% endblock script %}
+</script>
+</head>
+<body style="position:relative;margin-left:0px;">
+	<div style="z-index:3;height:20vh;background-color:rgb(8, 103, 73);position:fixed;width:100%;top:0;left:0;">
+		<div style="position:absolute;height:100px;top:25%;left:3%;">
+			<div style="position:absolute;"><a style="background-color:yellow;" href='/.'><i class="fa fa-home" style="position:absolute;color:rgba(0,0,0,1);font-size:10vh;" ></i></a></div>
+			<div style="font-size:15vh;"><b>{% block iconpm %}
+			{% endblock iconpm %}</b></div>
+		</div>
+	</div>
+	<div style="position:relative;" >
+		{% block bodypm %}
+			
+		{% endblock bodypm %}
+	</div> 
+        <!--
+		<div class="w3-center w3-large" style="">
+			<button class="w3-button w3-round-xxlarge" style="background-color:#00cc99;width:20%;height:50px;margin-top:65px;">
+				<p style="margin-bottom:26px;">jump to the next page</p>
+			</button>
+			<br>	background-color:rgba(118,133,29,0.16);overflow:hide;
+			<button class="w3-button w3-round-xxlarge" style="background-color:#00cc99;width:20%;height:50px;margin-bottom:50px;margin-top:35px;">
+				<p style="margin-bottom:26px;">take the test</p>
+			</button>
+		</div>
+        -->
+</body>
+</html>	
